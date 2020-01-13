@@ -18,6 +18,7 @@ JOHN Q PUBLIC: 1
 ```
 
 Why does John Q Public appear twice?
+John Q Public appears twice because the equals/hashcode functions were not overridden in the Employee class. Thus, when the default hashcode() function is called, there will be no collision in the resulting hashmap, thus leading to the two John Q Publics being listed as separate objects. I naively used the SSN as the unique identifier for the person, but we can also extend the hashcode function to utilize the person's name as well. 
 
 ## Task 1
 

@@ -14,4 +14,34 @@ public class Employee
         lastName = _lastName;
         socialSecurityNumber = _socialSecurityNumber;
     }
+
+    public int hashCode()
+    {
+        String no_dashes = socialSecurityNumber.replace("-", "");
+        return Integer.parseInt(no_dashes);
+    }
+
+
+    public boolean equals(Object obj) {
+        if(this == obj)
+        {
+            return true;
+        }
+        if(obj == null)
+        {
+            return false;
+        }
+        if(getClass() != obj.getClass())
+        {
+            return false;
+        }
+        Employee comparison_employee = (Employee) obj;
+        if(this.hashCode() == comparison_employee.hashCode())
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
 }
